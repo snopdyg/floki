@@ -45,16 +45,16 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="bg-background py-20">
+    <section className="bg-background py-16 sm:py-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-4">Join Our Community</h2>
-          <p className="text-lg text-muted-foreground">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Join Our Community</h2>
+          <p className="text-base sm:text-lg text-muted-foreground">
             Want to partner with us or have questions? Fill out the form below and let's build the future of memecoins
             together!
           </p>
@@ -64,7 +64,7 @@ export default function ContactForm() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                 Name
@@ -77,6 +77,7 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                className="text-base"
               />
             </div>
             <div>
@@ -91,6 +92,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                className="text-base"
               />
             </div>
             <div>
@@ -105,6 +107,7 @@ export default function ContactForm() {
                 value={formData.telegramHandle}
                 onChange={handleChange}
                 required
+                className="text-base"
               />
             </div>
             <div>
@@ -119,6 +122,7 @@ export default function ContactForm() {
                 value={formData.walletAddress}
                 onChange={handleChange}
                 required
+                className="text-base"
               />
             </div>
             <div>
@@ -129,13 +133,13 @@ export default function ContactForm() {
                 id="message"
                 name="message"
                 placeholder="Tell us about your ideas or partnership proposals..."
-                className="min-h-[120px]"
+                className="min-h-[120px] text-base"
                 value={formData.message}
                 onChange={handleChange}
                 required
               />
             </div>
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
+            <Button type="submit" className="w-full py-3 text-base" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>

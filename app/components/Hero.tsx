@@ -5,10 +5,10 @@ import { motion } from "framer-motion"
 export default function Hero() {
   return (
     <div className="relative isolate overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <motion.h1
-            className="mt-10 text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
+            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -16,7 +16,7 @@ export default function Hero() {
             <span className="text-gradient">FLOKI WIF HAT</span>
           </motion.h1>
           <motion.p
-            className="mt-6 text-lg leading-8 text-muted-foreground"
+            className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8 lg:mt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -25,18 +25,18 @@ export default function Hero() {
             together. Now listed on Ape Store!
           </motion.p>
           <motion.div
-            className="mt-10 flex items-center gap-x-6"
+            className="mt-8 flex items-center gap-x-6 lg:mt-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <a href="#buy" className="apple-button">
+            <a href="#buy" className="apple-button text-sm sm:text-base">
               Buy on Ape Store
             </a>
           </motion.div>
         </div>
         <motion.div
-          className="mx-auto mt-16 lg:mt-0"
+          className="mx-auto mt-12 max-w-sm sm:max-w-md lg:mt-0 lg:max-w-none"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -45,9 +45,7 @@ export default function Hero() {
             <img
               src="/images/character-icon.png"
               alt="FLOKI WIF HAT mascot"
-              width={600}
-              height={600}
-              className="w-[500px] rounded-2xl shadow-xl ring-1 ring-gray-900/10"
+              className="w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] rounded-2xl shadow-xl ring-1 ring-gray-900/10 mx-auto"
             />
           </div>
         </motion.div>
