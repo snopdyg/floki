@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Footer() {
   return (
     <footer className="bg-background border-t border-border">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
         <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           {["Tokenomics", "Roadmap", "Community", "Ape Store"].map((item) => (
             <div key={item} className="pb-6">
@@ -26,7 +26,7 @@ export default function Footer() {
             <span className="sr-only">Telegram</span>
           </a>
           <a
-            href="https://twitter.com/flokiwifhat"
+            href="https://x.com/FLOWIFHAT"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-sky-500 transition-colors"

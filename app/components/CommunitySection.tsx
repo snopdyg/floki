@@ -13,7 +13,7 @@ const socialLinks = [
   {
     name: "Twitter",
     icon: <img src="/images/twitter-icon.png" alt="Twitter" className="w-6 h-6" />,
-    url: "https://twitter.com/flokiwifhat",
+    url: "https://x.com/FLOWIFHAT",
     description: "Follow for memes and updates",
     color: "bg-sky-500 hover:bg-sky-600",
   },
@@ -21,16 +21,16 @@ const socialLinks = [
 
 export default function CommunitySection() {
   return (
-    <section id="community" className="py-20 bg-gradient-to-b from-background to-secondary/10">
+    <section id="community" className="py-16 sm:py-20 bg-gradient-to-b from-background to-secondary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-foreground mb-4">Join Our Pack</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Join Our Pack</h2>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Be part of the strongest memecoin community on Base Network. Connect with fellow FLOKI WIF HAT holders and
             stay updated with the latest alpha!
           </p>
@@ -38,7 +38,7 @@ export default function CommunitySection() {
 
         {/* Social Media Links */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -49,15 +49,15 @@ export default function CommunitySection() {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${social.color} text-white rounded-2xl p-8 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl`}
+              className={`${social.color} text-white rounded-2xl p-6 sm:p-8 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl`}
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.95 }}
             >
               <div className="flex items-center space-x-3 mb-4">
                 {social.icon}
-                <h3 className="text-2xl font-bold">{social.name}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold">{social.name}</h3>
               </div>
-              <p className="text-lg opacity-90 mb-4">{social.description}</p>
+              <p className="text-base sm:text-lg opacity-90 mb-4">{social.description}</p>
               <div className="flex items-center justify-between">
                 <span className="text-sm font-semibold">Join Now</span>
                 <svg
@@ -76,13 +76,15 @@ export default function CommunitySection() {
 
         {/* Community Features */}
         <motion.div
-          className="bg-background rounded-3xl p-8 shadow-lg border border-primary/10"
+          className="bg-background rounded-3xl p-6 sm:p-8 shadow-lg border border-primary/10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h3 className="text-2xl font-bold text-foreground mb-6 text-center">What You Get in Our Community</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6 text-center">
+            What You Get in Our Community
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <div className="text-center">
               <h4 className="font-semibold text-foreground mb-2">Exclusive Alpha</h4>
               <p className="text-sm text-muted-foreground">
