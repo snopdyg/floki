@@ -70,11 +70,6 @@ export default function FeatureCarousel() {
                   <h3 className="text-xl font-semibold mb-2 text-foreground">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
                 </div>
-                <div className="mt-4">
-                  <a href="#learn-more" className="text-primary hover:underline">
-                    Learn more →
-                  </a>
-                </div>
               </motion.div>
             ))}
           </motion.div>

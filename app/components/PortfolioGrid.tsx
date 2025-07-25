@@ -95,18 +95,6 @@ export default function PortfolioGrid() {
                 <div className="text-sm font-medium text-primary mb-2">{project.category}</div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">{project.title}</h3>
                 <p className="text-muted-foreground mb-4">{project.description}</p>
-                <a href="#details" className="text-primary hover:underline inline-flex items-center">
-                  View Details
-                  <svg
-                    className="w-4 h-4 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </a>
               </motion.div>
             ))}
           </AnimatePresence>
