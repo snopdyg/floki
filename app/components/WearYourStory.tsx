@@ -23,8 +23,13 @@ export default function WearYourStory() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <a href="#tokenomics" className="apple-button inline-flex items-center">
-              Explore Tokenomics
+            <a
+              href="https://ape.store/base/0x1fbd31e8745867cbacd4564634e7daf8ad62fb71"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="apple-button inline-flex items-center"
+            >
+              Buy FLOKI WIF HAT
               <svg
                 className="w-5 h-5 ml-2"
                 fill="none"

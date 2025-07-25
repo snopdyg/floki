@@ -25,13 +25,26 @@ export default function Hero() {
             together. Now listed on Ape Store!
           </motion.p>
           <motion.div
-            className="mt-8 flex items-center gap-x-6 lg:mt-10"
+            className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:mt-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <a href="#buy" className="apple-button text-sm sm:text-base">
+            <a
+              href="https://ape.store/base/0x1fbd31e8745867cbacd4564634e7daf8ad62fb71"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="apple-button text-sm sm:text-base"
+            >
               Buy on Ape Store
+            </a>
+            <a
+              href="https://dexscreener.com/base/0x08E927fD1AAa6848C753882C83998F6AC25FB730"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm sm:text-base text-primary hover:underline font-semibold"
+            >
+              View Chart →
             </a>
           </motion.div>
         </div>

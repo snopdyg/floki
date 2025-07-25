@@ -86,20 +86,36 @@ export default function TokenomicsSection() {
           <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6 text-center">
             Contract Information
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             <div className="text-center">
               <h4 className="font-semibold text-foreground mb-2">Contract Address</h4>
               <p className="text-xs sm:text-sm text-muted-foreground bg-secondary/20 p-3 rounded-lg font-mono break-all">
-                0x1234...5678 (Base Network)
+                0x1fbd31e8745867cbacd4564634e7daf8ad62fb71
               </p>
             </div>
             <div className="text-center">
-              <h4 className="font-semibold text-foreground mb-2">Ape Store Listing</h4>
+              <h4 className="font-semibold text-foreground mb-2">DexScreener</h4>
               <a
-                href="#"
+                href="https://dexscreener.com/base/0x08E927fD1AAa6848C753882C83998F6AC25FB730"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-primary hover:underline font-semibold text-sm sm:text-base"
               >
-                Trade on Ape Store
+                View Chart
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+            <div className="text-center">
+              <h4 className="font-semibold text-foreground mb-2">Ape Store</h4>
+              <a
+                href="https://ape.store/base/0x1fbd31e8745867cbacd4564634e7daf8ad62fb71"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-primary hover:underline font-semibold text-sm sm:text-base"
+              >
+                Buy Now
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>

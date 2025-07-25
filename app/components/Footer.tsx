@@ -5,10 +5,19 @@ export default function Footer() {
     <footer className="bg-background border-t border-border">
       <div className="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
         <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-          {["Tokenomics", "Roadmap", "Community", "Ape Store"].map((item) => (
-            <div key={item} className="pb-6">
-              <Link href="#" className="text-sm leading-6 text-muted-foreground hover:text-foreground">
-                {item}
+          {[
+            { name: "Tokenomics", href: "#tokenomics" },
+            { name: "Roadmap", href: "#roadmap" },
+            { name: "Community", href: "#community" },
+            { name: "Buy Now", href: "https://ape.store/base/0x1fbd31e8745867cbacd4564634e7daf8ad62fb71" },
+          ].map((item) => (
+            <div key={item.name} className="pb-6">
+              <Link
+                href={item.href}
+                {...(item.name === "Buy Now" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="text-sm leading-6 text-muted-foreground hover:text-foreground"
+              >
+                {item.name}
               </Link>
             </div>
           ))}
