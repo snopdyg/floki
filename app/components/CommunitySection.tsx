@@ -9,7 +9,6 @@ const socialLinks = [
     url: "https://t.me/flokiwifhat",
     description: "Join our main community chat",
     color: "bg-blue-500 hover:bg-blue-600",
-    members: "8,500+ members",
   },
   {
     name: "Twitter",
@@ -17,7 +16,6 @@ const socialLinks = [
     url: "https://twitter.com/flokiwifhat",
     description: "Follow for memes and updates",
     color: "bg-sky-500 hover:bg-sky-600",
-    members: "12,000+ followers",
   },
 ]
 
@@ -55,14 +53,9 @@ export default function CommunitySection() {
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-3">
-                  {social.icon}
-                  <h3 className="text-2xl font-bold">{social.name}</h3>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm opacity-90">{social.members}</p>
-                </div>
+              <div className="flex items-center space-x-3 mb-4">
+                {social.icon}
+                <h3 className="text-2xl font-bold">{social.name}</h3>
               </div>
               <p className="text-lg opacity-90 mb-4">{social.description}</p>
               <div className="flex items-center justify-between">
