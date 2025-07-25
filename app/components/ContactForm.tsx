@@ -1,44 +1,45 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  telegramHandle: z.string().min(3, { message: "Please enter your Telegram handle." }),
-  walletAddress: z.string().min(10, { message: "Please enter your wallet address." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-})
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      telegramHandle: "",
-      walletAddress: "",
-      message: "",
-    },
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    telegramHandle: "",
+    walletAddress: "",
+    message: "",
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
     setIsSubmitting(true)
+
     // Simulate API call
     setTimeout(() => {
-      console.log(values)
+      console.log(formData)
       setIsSubmitting(false)
-      form.reset()
+      setFormData({
+        name: "",
+        email: "",
+        telegramHandle: "",
+        walletAddress: "",
+        message: "",
+      })
       alert("Thank you for reaching out! Our team will contact you soon!")
     }, 2000)
   }
@@ -63,82 +64,81 @@ export default function ContactForm() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                Name
+              </label>
+              <Input
+                id="name"
                 name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Crypto Degen" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
+                type="text"
+                placeholder="Crypto Degen"
+                value={formData.name}
+                onChange={handleChange}
+                required
               />
-              <FormField
-                control={form.control}
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                Email
+              </label>
+              <Input
+                id="email"
                 name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="degen@crypto.com" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
+                type="email"
+                placeholder="degen@crypto.com"
+                value={formData.email}
+                onChange={handleChange}
+                required
               />
-              <FormField
-                control={form.control}
+            </div>
+            <div>
+              <label htmlFor="telegramHandle" className="block text-sm font-medium text-foreground mb-2">
+                Telegram Handle
+              </label>
+              <Input
+                id="telegramHandle"
                 name="telegramHandle"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Telegram Handle</FormLabel>
-                    <FormControl>
-                      <Input placeholder="@cryptodegen" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
+                type="text"
+                placeholder="@cryptodegen"
+                value={formData.telegramHandle}
+                onChange={handleChange}
+                required
               />
-              <FormField
-                control={form.control}
+            </div>
+            <div>
+              <label htmlFor="walletAddress" className="block text-sm font-medium text-foreground mb-2">
+                Wallet Address (Base Network)
+              </label>
+              <Input
+                id="walletAddress"
                 name="walletAddress"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Wallet Address (Base Network)</FormLabel>
-                    <FormControl>
-                      <Input placeholder="0x..." {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
+                type="text"
+                placeholder="0x..."
+                value={formData.walletAddress}
+                onChange={handleChange}
+                required
               />
-              <FormField
-                control={form.control}
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                Message
+              </label>
+              <Textarea
+                id="message"
                 name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Message</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Tell us about your ideas or partnership proposals..."
-                        className="min-h-[120px]"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
+                placeholder="Tell us about your ideas or partnership proposals..."
+                className="min-h-[120px]"
+                value={formData.message}
+                onChange={handleChange}
+                required
               />
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
-          </Form>
+            </div>
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </Button>
+          </form>
         </motion.div>
       </div>
     </section>
