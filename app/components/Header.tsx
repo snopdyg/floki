@@ -38,6 +38,12 @@ export default function Header() {
         </div>
         <div className="flex gap-x-12">
           <button
+            onClick={() => scrollToSection("about")}
+            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors cursor-pointer"
+          >
+            About
+          </button>
+          <button
             onClick={() => scrollToSection("tokenomics")}
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors cursor-pointer"
           >

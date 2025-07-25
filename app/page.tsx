@@ -1,4 +1,5 @@
 import Hero from "./components/Hero"
+import About from "./components/About"
 import WearYourStory from "./components/WearYourStory"
 import TokenomicsSection from "./components/TokenomicsSection"
 import FeatureCarousel from "./components/FeatureCarousel"
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <About />
       <WearYourStory />
       <TokenomicsSection />
       <FeatureCarousel />
